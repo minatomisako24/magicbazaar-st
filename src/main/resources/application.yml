@@ -1,0 +1,23 @@
+server:
+  port: 8000
+spring:
+  application:
+    name: magicbazaar-st
+  datasource:
+    url: jdbc:mysql://localhost:3306/magicbazaar?useUnicode=true&characterEncoding=utf-8&serverTimeZone=UTC
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.a243.magicbazaar.dao.pojo
+  global-config:
+    db-config:
+      id-type: auto
+      table-prefix: mb_
+
